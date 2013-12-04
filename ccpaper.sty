@@ -1,0 +1,91 @@
+% Style file to format Carleton papers
+% Author: Andrew Gainer-Dewar, 2013
+\ProvidesPackage{ccpaper}
+
+%% LOAD SUPPORTING PACKAGES
+
+% We want to use US letter paper with one-inch margins
+\RequirePackage{geometry}
+\geometry{letterpaper, margin=1.0in}
+
+% We should support UTF-8 in the input file (since it is the twenty-first
+% century, after all)
+\RequirePackage[utf8]{inputenc}
+
+% And we should use T1 for the output encoding, because the default results
+% in a big mess with accented characters in the PDF
+\RequirePackage[T1]{fontenc}
+
+% The Babel package modernizes the hyphenation routines.
+% Here, we configure it to use US English.
+\RequirePackage[american]{babel}
+
+% The microtype package fixes a lot of small typographical things.
+% They're hard to see, but your eyes will thank you!
+\RequirePackage{microtype}
+
+% The graphicx package is used for handling graphics and colors.
+\RequirePackage{graphicx}
+
+% The titling package allows us to rewrite the \maketitle command easily.
+\RequirePackage{titling}
+
+% The setspace package lets us adjust line spacing
+\RequirePackage{setspace}
+
+% The amsmath and amssymb packages provide some important mathematical support
+\RequirePackage{amsmath,amssymb}
+
+% The amsthm package lets us set up theorem-like environments
+\RequirePackage{amsthm}
+
+% We then need to actually create those environments
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{observation}[theorem]{Observation}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem*{lemma*}{lemma}
+\newtheorem*{proposition*}{Proposition}
+\newtheorem*{observation*}{Observation}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem*{definition*}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{remark*}{Remark}
+
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{example*}{Example}
+
+\newtheorem{note}[theorem]{Note}
+\newtheorem*{note*}{Note}
+
+% The cleveref package handles a lot of fanciness with internal cross-references.
+\RequirePackage[capitalize]{cleveref}
+
+% The booktabs package facilitates high-quality table formatting.
+\RequirePackage{booktabs}
+
+% The hyperref package sets up PDF hyperlinks and other fanciness.
+% WARNING: THIS MUST BE THE LAST PACKAGE LOAD
+\RequirePackage{hyperref}
+
+%% CONFIGURE LAYOUTS
+
+% Define a command to include professor name in the header
+\newcommand{\prof}[1]{\gdef\@prof{#1}}
+
+% and use it
+\predate{\begin{center}\large\@prof\\[\baselineskip]}
+\postdate{\par\end{center}}
+
+% Make sure that title is properly space even when double-spacing paper
+\renewcommand{\maketitlehooka}{\begin{singlespace}}
+\renewcommand{\maketitlehookd}{\end{singlespace}}
