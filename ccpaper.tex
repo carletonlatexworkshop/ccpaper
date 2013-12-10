@@ -7,6 +7,14 @@
 % Computer Modern. Feel free to replace this with a different font package.
 \usepackage{lmodern}
 
+% Load in biblatex
+% To use a different bibliography style, just change "numeric" to
+% your preferred style (mla for MLA style, alphabetic for Author-Year
+% style, etc.) There are a lot of options; check the BibLaTeX documentation.
+\usepackage[backend=biber,style=numeric]{biblatex}
+% Select the bibliography file
+\addbibresource{sources.bib}
+
 \title{Title of the paper}
 \subtitle{Subtitle of the paper} %Optional. Omit if not wanted.
 \author{Author 1 \and Author 2}
