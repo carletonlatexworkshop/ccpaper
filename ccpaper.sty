@@ -98,8 +98,11 @@
 % Define a command to include professor name in the header
 \newcommand{\prof}[1]{\gdef\@prof{#1}}
 
+% And another for the course
+\newcommand{\course}[1]{\gdef\@course{#1}}
+
 % and use it
-\predate{\begin{center}\large\@prof\\[\baselineskip]}
+\predate{\begin{center}\large\@prof\par\@course\\[\baselineskip]}
 \postdate{\par\end{center}}
 
 % Make sure that title is properly space even when double-spacing paper
