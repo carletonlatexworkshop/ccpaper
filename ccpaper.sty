@@ -83,15 +83,18 @@
 \newtheorem{note}[theorem]{Note}
 \newtheorem*{note*}{Note}
 
-% The cleveref package handles a lot of fanciness with internal cross-references.
-\RequirePackage[capitalize]{cleveref}
-
 % The booktabs package facilitates high-quality table formatting.
 \RequirePackage{booktabs}
 
 % The hyperref package sets up PDF hyperlinks and other fanciness.
 % WARNING: THIS MUST BE THE LAST PACKAGE LOAD
 \RequirePackage{hyperref}
+
+% The cleveref package handles a lot of fanciness with internal cross-references.
+% Curiously, it has to come *after* hyperref.
+\RequirePackage[capitalize]{cleveref}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
 
 %% CONFIGURE LAYOUTS
 
