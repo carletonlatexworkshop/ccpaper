@@ -101,7 +101,16 @@
 % And another for the course
 \newcommand{\course}[1]{\gdef\@course{#1}}
 
+% Also define a command for a subtitle
+\newcommand{\subtitle}[1]{\gdef\@subtitle{#1}}
+
 % and use it
+\pretitle{\begin{center}\LARGE}
+\posttitle{\par\end{center}
+  \ifdefined\@subtitle
+    \begin{center}\large\@subtitle\par\end{center}%
+  \fi
+}
 \predate{\begin{center}\large\@prof\par\@course\\[\baselineskip]}
 \postdate{\par\end{center}}
 
