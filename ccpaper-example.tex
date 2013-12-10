@@ -1,0 +1,52 @@
+% Example for Carleton student papers
+% Author: Andrew Gainer-Dewar, 2013
+\documentclass[twoside,article]{article}
+\usepackage{ccpaper}
+
+% The Latin Modern font is a modernized replacement for the classic
+% Computer Modern. Feel free to replace this with a different font package.
+\usepackage{lmodern}
+
+% These commands tell the ccpaper package about your document.
+% They are used to set up the header.
+\title{Example paper}
+\subtitle{A demonstration of the use of the \texttt{ccpaper} style} % \subtitle{} is optional. Simply omit it if you don't want one.
+\author{Lori T.~Jeremiah \and Ray B.~Langstrom} % The \and command takes care of putting the names side-by-side.
+\date{February 31, 2014}
+\prof{Professor M.~Holmes}
+\course{HIST-314: History of Magic}
+
+% To enable double spacing, uncomment this line:
+% \doublespacing
+
+% Load in biblatex
+% To use a different bibliography style, just change "numeric" to
+% your preferred style (mla for MLA style, alphabetic for Author-Year
+% style, etc.) There are a lot of options; check the BibLaTeX documentation.
+\usepackage[backend=biber,style=numeric]{biblatex}
+% Select the bibliography file
+\addbibresource{sources.bib}
+
+\begin{document}
+% Calling \maketitle tells the package to print out the title using
+% the information you configured above.
+\maketitle{}
+
+Test text goes here.
+Suppose this were long enough to break onto a second line---wouldn't that be grand?
+Well, to everyone's delight, it just so happens that it shall!
+In fact, if we're very lucky, we might even get to see \emph{three} lines.
+
+\section*{Sections and other divisions}
+Not all papers will have sections, of course.
+However, if yours does, you should be sure to mark them using \LaTeX{}'s commands for that purpose.
+Otherwise, things may end up looking very strange.
+
+\section*{Citation and reference}
+A good academic paper should be chock-full of citations.
+For example, any \LaTeX{} guide owes a great debt to the \enquote{Not so short introduction to \LaTeXe} \cite{notsoshort}.
+
+
+
+\printbibliography
+\end{document}
