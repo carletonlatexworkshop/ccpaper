@@ -42,6 +42,16 @@
 % The mathtools and amssymb packages provide some important mathematical support
 \RequirePackage{mathtools,amssymb}
 
+% The mathtools package provides facilities for many mathematical tasks.
+% In particular, it sets up nice commands for formatting braces.
+\DeclarePairedDelimiter{\pbrac}{(}{)}
+\DeclarePairedDelimiter{\sbrac}{[}{]}
+\DeclarePairedDelimiter{\cbrac}{\{}{\}}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+
 % The amsthm package lets us set up theorem-like environments
 \RequirePackage{amsthm}
 
@@ -97,4 +107,4 @@
 \renewcommand{\maketitlehookd}{\end{singlespace}}
 
 % The default article title is set down the page a bit, which is silly.
-\setlength{\droptitle}{-4em
+\setlength{\droptitle}{-4em}
